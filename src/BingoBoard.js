@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import victoryGif from './Mj2iT9d.gif'
 import './BingoBoard.css';
 
 const FREESPACE_KEY = 0;
@@ -104,6 +105,9 @@ class BingoBoard extends Component {
                 selected={space.selected}
                 clickHandler={(ev) => this.handleSpaceClick(space.key)} />
         )
+        let victory = this.spacesHaveBingo(this.state.spaces) ?
+            <img className="bingo-board__victory" src={victoryGif} />
+            : null;
         return (
             <div>
                 <div>
@@ -113,6 +117,7 @@ class BingoBoard extends Component {
                 <div className="bingo-board">
                     {spaces}
                 </div>
+                {victory}
             </div>
         );
     }

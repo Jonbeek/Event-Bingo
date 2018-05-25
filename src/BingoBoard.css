@@ -29,3 +29,13 @@
     background-color: blue;
     color: white;
 }
+
+.bingo-board__victory {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
