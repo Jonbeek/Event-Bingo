@@ -1,0 +1,31 @@
+.bingo-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: black;
+    width: min-content;
+    height: min-content;
+    margin: auto;
+    margin-bottom: 50px;
+    border: 10px solid black;
+}
+
+.bingo-board__space {
+    display: inline-flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    padding: 10px;
+    user-select: none;
+}
+
+.bingo-board__space:hover {
+    background-color: lightblue;
+}
+
+.bingo-board__space--selected, .bingo-board__space--selected:hover {
+    background-color: blue;
+    color: white;
+}
