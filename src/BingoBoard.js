@@ -7,7 +7,7 @@ class BingoBoard extends Component {
     constructor(props) {
         super(props);
         let prevSession = localStorage.getItem("bingoState");
-        if (prevSession !== undefined && prevSession !== "undefined") {
+        if (prevSession != undefined && prevSession !== "undefined") {
             this.state = {
                 spaces: JSON.parse(prevSession)
             };
