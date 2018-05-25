@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as bingoSpaces from './data.json'
+import bingoSpaces from './data.js'
 import BingoBoard from './BingoBoard'
 import './App.css';
 

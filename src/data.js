@@ -1,4 +1,4 @@
-[
+let data = [
   { "key": 0, "text": "It's a bad game" },
   {
     "key": 1,
@@ -203,3 +203,4 @@
   { "key": 100, "text": "Mystical forces from nowhere" },
   { "key": 101, "text": "Hanging around in lingerie" }
 ]
+export default data;
