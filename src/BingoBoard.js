@@ -110,9 +110,10 @@ class BingoBoard extends Component {
             : null;
         return (
             <div>
-                <div>
-                    <span>Bingo!</span>
-                    <button onClick={() => this.fullReset()}>New Board</button>
+                <div className="bingo-header">
+                    <div className="controls">
+                        <button onClick={() => this.fullReset()}>New Board</button>
+                    </div>
                 </div>
                 <div className="bingo-board">
                     {spaces}

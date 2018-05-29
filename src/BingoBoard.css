@@ -39,3 +39,10 @@
     z-index: 1000;
     pointer-events: none;
 }
+
+.bingo-header .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4px;
+}

@@ -1,5 +1,5 @@
 let data = [
-  { "key": 0, "text": "It's a bad game" },
+  { "key": 0, "text": "There's one actually good scene" },
   {
     "key": 1,
     "text": "It steals everything from Blade Runner but does so poorly"
