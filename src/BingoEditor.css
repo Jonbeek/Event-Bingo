@@ -16,6 +16,12 @@
     margin: 4px;
 }
 
+@media print {
+    .bingo-editor__editor input {
+        display: none;
+    }
+}
+
 .bingo-editor__editor button {
     width: 100px;
     align-self: center;

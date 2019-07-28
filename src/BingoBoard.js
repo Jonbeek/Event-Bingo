@@ -7,7 +7,7 @@ const FREESPACE_KEY = 0;
 class BingoBoard extends Component {
     constructor(props) {
         super(props);
-        let prevSession = localStorage.getItem("bingoState");
+        let prevSession = localStorage.getItem(this.getStorageName());
         if (prevSession != undefined && prevSession !== "undefined") {
             this.state = {
                 spaces: JSON.parse(prevSession)
@@ -19,6 +19,10 @@ class BingoBoard extends Component {
             };
             this.saveState();
         }
+    }
+
+    getStorageName() {
+        return "bingoState" + (this.props.name != null ? ("-" + this.props.name) : "");
     }
 
     generateNewBoard() {
@@ -47,7 +51,7 @@ class BingoBoard extends Component {
     }
 
     saveState() {
-        localStorage.setItem("bingoState", JSON.stringify(this.state.spaces));
+        localStorage.setItem(this.getStorageName(), JSON.stringify(this.state.spaces));
     }
 
     componentDidUpdate() {

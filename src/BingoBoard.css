@@ -46,3 +46,12 @@
     justify-content: center;
     margin: 4px;
 }
+
+@media print {
+    .bingo-board {
+        -webkit-print-color-adjust: exact;
+    }
+    .bingo-header .controls {
+        display: none;
+    }
+}

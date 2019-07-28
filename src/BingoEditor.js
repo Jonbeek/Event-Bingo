@@ -65,10 +65,28 @@ class BingoEditor extends Component {
         reader.readAsText(file);
     }
 
+    handleTextUpload(ev) {
+        let file = ev.target.files[0];
+        let reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                let rows = ev.target.result.split('\r\n');
+                this.setState({
+                    freeSpace: rows[0],
+                    spaces: rows.slice(1)
+                });
+            }
+            catch (e) {
+                console.log("Failed to read file: " + e);
+            }
+        }
+        reader.readAsText(file);
+    }
+
     render() {
         let spaces = this.state.spaces.map((v, i, a) => {
             let focus = i === (a.length - 1);
-            return <input 
+            return <input
                 key={i}
                 value={v}
                 autoFocus={focus}
@@ -84,7 +102,7 @@ class BingoEditor extends Component {
         return (
             <div className="bingo-editor">
                 <div className='bingo-editor__editor'>
-                    <input type="file" onChange={(ev) => this.handleUpload(ev)} />
+                    <input type="file" onChange={(ev) => this.handleTextUpload(ev)} />
                     <input value={this.state.freeSpace} onChange={(ev) => this.handleInput(ev, -1)} />
                     {spaces}
                     <button onClick={ev => this.handleAdd(ev)}>New Space</button>
